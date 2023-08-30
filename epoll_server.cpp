@@ -417,7 +417,7 @@ int main(int argc,char *argv[]){
             if(g_events[check_active].status!=1){
                 continue;
             }
-            if(now_time-g_events[check_active].last_active_time>=60){
+            if(now_time-g_events[check_active].last_active_time>=120){
                 char *buf=g_events[check_active].buf;
                 sprintf(buf,"---------太长时间未操作，已与服务器断开连接---------\n");
                 write(g_events[check_active].fd,buf,strlen(buf));
